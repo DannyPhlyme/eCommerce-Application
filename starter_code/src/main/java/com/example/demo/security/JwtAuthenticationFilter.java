@@ -45,10 +45,10 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                     new UsernamePasswordAuthenticationToken(creds.getUsername(), creds.getPassword(), new ArrayList<>()));
         } catch (IOException | RuntimeException e) {
             log.error("[authentication_error]: An authentication error occurred. {}(0x1230au)", e.getMessage());
-            /*throw new RuntimeException(e);*/
+            throw new RuntimeException(e);
         }
 
-        return null;
+//        return null;
     }
 
     @Override
